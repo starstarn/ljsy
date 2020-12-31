@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频</title>
+  <link type="text/css" rel="styleSheet" href="./index3.css" />
+  <link type="text/css" rel="styleSheet" href="../reset.css" />
+  <link rel="icon" href="../视频.ico">
+  <script src="../iconfont.js"></script>
+</head>
+
+<body>
+  <h1>视频</h1>
+  <div class="content">
+    <div class="video1" style="text-align:center">
+      <video id="video1" width="600" controls="controls">
+        <source src="../video/画画.mp4" type="video/mp4">
+        您的浏览器不支持 HTML5 video 标签。
+      </video>
+      <br>
+      <button onclick="playPause()">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-shipin-"></use>
+        </svg>
+        播放/暂停</button>
+      <button onclick="makeBig()">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fangda"></use>
+        </svg>
+        放大</button>
+      <button onclick="makeSmall()">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-zoomOut"></use>
+        </svg>
+        缩小</button>
+      <button onclick="makeNormal()">普通</button>
+    </div>
+  </div>
+
+  <script>
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+      if (myVideo.paused)
+        myVideo.play();
+      else
+        myVideo.pause();
+    }
+
+    function makeBig() {
+      myVideo.width = 720;
+    }
+
+    function makeSmall() {
+      myVideo.width = 480;
+    }
+
+    function makeNormal() {
+      myVideo.width = 576;
+    } 
+  </script>
+
+</body>
+</body>
+
+</html>

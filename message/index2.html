@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <link type="text/css" rel="styleSheet"  href="./index2.css" />
+    <link type="text/css" rel="styleSheet"  href="../reset.css" />
+    <link rel="icon" href="../留言板.ico">
+    <script src="./index2.js"></script>
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            var oBtns = $(".select").find("button");
+            var oDivs = $(".xuanze").find("div");
+            /* console.log(oBtns); */
+
+            //给按钮添加点击事件
+            oBtns.click(function(){
+                oBtns.attr("class","");
+                oDivs.css("display","none");
+
+                $(this).attr("class","active");
+                oDivs.eq($(this).index()).css("display","block");
+            })
+        })
+    </script>
+</head>
+<body>
+    <img class="ye1" src="../image/fengye.gif">
+    <img class="ye2" src="../image/fengye.gif">
+    
+   <!--  留言板 -->
+   <div class="head">
+    留言板
+    </div>
+    <div class="guding">
+        <img class="xmdt" src="../image/熊猫动图.gif" />
+        <img class="liuyan" src="../image/留言1.jpeg" />
+    </div>
+   <div class="all2">
+       <div class="xuanze">
+            <p class="select">
+                <button>实名</button>
+                <button>匿名</button>
+            </p>
+            <div class="shiming" style="display: block;">
+                <label>留言人:</label>
+                <input id="name" type="text" placeholder="请输入昵称" />
+            </div>
+            <div class="niming" style="display: none;">
+                <label>留言人:</label>
+                <span>XXX</span>
+            </div>
+       </div>
+        
+       <label>留言内容:</label>
+       <textarea id="con"></textarea>
+       <p>
+        <button id="clear">清空</button>
+        <span id="time1"></span>
+        <button id="send">发表留言</button>
+       </p>
+       
+       <div class="content">
+           <ul>
+               <li id="add">
+
+               </li>
+           </ul>
+           
+       </div>
+   </div>
+</body>
+</html>
